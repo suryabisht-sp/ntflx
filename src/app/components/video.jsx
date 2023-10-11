@@ -12,7 +12,7 @@ const Video = () => {
       </div>
         <div className=''>
           <img alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" />
-        <video muted autoPlay playsinline loop>
+        <video muted autoPlay playsInline loop>
           <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v" type="video/mp4"></source>
         </video>
         </div>

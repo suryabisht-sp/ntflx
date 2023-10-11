@@ -4,7 +4,7 @@ const Device = () => {
   return (
     <div className='Device-container'>
       <div className='device-box'>
-        <div>
+        <div className='video-text'>
           <h1>
             Watch everywhere
           </h1>
@@ -14,7 +14,7 @@ const Device = () => {
         </div>
         <div className=''>
           <img alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" />
-          <video data-uia="nmhp-card-animation-asset-video" autoplay="" playsinline="" muted="" loop="">
+          <video className='video-netflx' muted autoPlay playsInline loop>
             <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4" /></video>
         </div>
       </div>
