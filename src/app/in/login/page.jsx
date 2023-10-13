@@ -1,12 +1,24 @@
 "use client"
 
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const Login = () => {
   const [logoWidth, setLogoWidth] = useState(175);
+  const [email, setEmail] = useState("")
+  const [pass, setPassword] = useState("")
+  
+  const handlePass = (e) => {
+    setPassword(e.target.value)    
+  }
 
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const router = useRouter()
   const rty = async () => {
-const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
+    const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
 const options = {
 	method: 'GET',
 	headers: {
@@ -49,6 +61,23 @@ useEffect(()=>{
     };
   }, []);
 
+
+  const handleclick = (e) => {
+    e.preventDefault();
+    if (!pass) {
+      alert("Email or password missing")
+      return
+    }
+        if (!pass) {
+      alert("Email or password missing")
+      return
+    }
+sessionStorage.setItem("user",email)
+    router.push("../streaming")
+  }
+
+  console.log("ap", pass, email)
+
   return (
     <div className='login-container'>
       <div className='layer'></div>
@@ -61,10 +90,10 @@ useEffect(()=>{
       <form className='form'>
         <h3>Sign In</h3>
         <div className='input-container'>
-          <input type='text' placeholder='Email or phone number' defaultValue="" />
-          <input type='password' placeholder='Password'/>
+          <input defaultValue={email} onChange={(e)=>{handleEmail(e)}} type='text' placeholder='Email or phone number' autoComplete='false' required/>
+          <input defaultValue={pass} onChange={(e)=>{handlePass(e)}} type='password' placeholder='Password' autoComplete='false' required/>
         </div>
-            <button>Sign In</button>
+            <button onClick={(e)=>{handleclick(e)}}>Sign In</button>
             <div className='rem'>
               <div className='check1'>
               <input className='checkbox' type='checkbox' />
@@ -83,7 +112,34 @@ useEffect(()=>{
               </div>
           </div>
         </div>
-        </div>
+      </div>
+       <div className='footer-container'>
+      <div className='footer-box'>
+        Questions? Call <span> 000-800-919-1694</span>
+        <div className='list-start'>
+          <ul className='footer-list'>
+            <li>FAQ</li>
+            <li>
+              Help Centre</li>
+            <li>
+              Terms of Use 
+              </li>
+            <li>Privacy
+            </li>
+            <li>Cookie Preferences
+            </li>
+            <li>
+              Corporate Information
+            </li>            
+          </ul>
+        </div>     
+          <div className="drop-select">
+             <select name="LanguageSelect" className='select' >
+              <option className="option" lang="en" label="English" defaultValue="en-IN">English</option>
+              <option className="option"  lang="hi" label="हिन्दी" defaultValue="hi-IN">हिन्दी</option></select>
+          </div>
+         </div>
+    </div>
     </div>
   )
 }

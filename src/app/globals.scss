@@ -658,7 +658,22 @@ a {
 .login-container {
   position: relative;
   overflow: hidden;
-
+  .footer-container{
+    top: 80%;
+  }
+   .footer-list{
+   text-decoration: none !important;
+   font-size: 12px !important;
+li{
+  cursor: pointer;
+   &:hover{
+      text-decoration: underline !important;
+    }
+}
+  }
+.LanguageSelect{
+  color: gray !important;
+}
   .logo {
     position: absolute;
     top: 0;
@@ -780,7 +795,7 @@ a {
   }
 
   .blue1 {
-    color: blue;
+    color: #1934BE;
   }
 
   .net-text {
@@ -923,64 +938,122 @@ a {
 body {
   background-color: #000;
 }
-.common{
+
+.common {
   display: flex;
 }
 
-.modal-1 {
-  position: relative;
-  width: 100%;
+.modal-pop {
   display: flex;
-  align-items: center;
-  button{
+  justify-content: center;
+}
+
+.modal-cont {
+  width: 100%;
+  background: #565553bd;
+  height: 100vh;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px white;
+
+  button {
     position: absolute;
-    top: 0;
+    right: 14%;
+    top: 12%;
     z-index: 1;
+    width: 0px;
+    border: 0;
+    font-size: 30px;
+    color: #fff;
+    font-weight: 700;
+
+    &:hover {
+      color: red;
+    }
   }
+
+  .modal-box {
+    position: absolute;
+    box-shadow: 0px 0px 13px red;
+    width: 80%;
+    height: 80vh;
+    left: 10%;
+    border-radius: 8px;
+    background: #000;
+    top: 10%;
+    display: flex;
+  }
+
   ul {
     list-style: none;
-    position: absolute;
-    top: 10%;
-    width: 50%;
-    overflow: auto;
-    height: 50vh;
   }
-  .layer-modal {
-    height: 100vh;
-    background: #0d0d0ded;
-    width: 100%;
-    position: absolute;
-  }
-  .image {
-    position: absolute;
-  }
-  .episodes {
-    width: 100%;
-    position: absolute;
+
+  .modal-sub-box {
     display: flex;
-    .image-box {
-      padding: 3rem;
-      width: 50%;
+    align-items: center;
+    width: 100%;
+    gap: 2%;
+  }
+
+  .video-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+li{display: flex;
+gap:2px
+}
+  .video-box-text {
+    width: 46%;
+    height: 50%;
+    overflow: scroll;
+
+    .video-img {
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 4%;    
+      width: 80%;
+      padding-left: 5px;
+      &:hover{background-color: #3e0101}
     }
-    .episodes-sub {
-      width: 100%;
+
+    .image-epi {
+      @extend .video-img;
+      flex-direction: column;
+      align-items: normal !important;
+      color: #fff;
     }
   }
-  .list{
-    @extend .common;
-    padding-left: 27px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    gap: 10px;
-  .list-text{
-    @extend .common;
-        flex-direction: column-reverse;
+  
 }
+
+@media only screen and (max-width: 600px) {
+  .layer {
+  width:100% !important
+  }
+  li{
+    flex-basis: 45% !important;
+  }
+  .form-container{
+    top: 5% !important
+  }
+  .footer-container{
+    top: 68% !important;
+  }
+  .form{
+     width: 100% !important;
+  }
+  .login-text{
+    width: 80% !important
+  }
+  .footer-box{
+    width: 100% !important;
+  }
+  .footer-list{
+    font-size: 10px !important;
+    text-decoration: none !important;
+    &:hover{
+      text-decoration: underline !important;
+    }
   }
 }

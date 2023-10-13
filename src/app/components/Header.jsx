@@ -1,6 +1,15 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Navbar = () => {
+  const router = useRouter()
+
+  const handleroute = () => {
+    router.push("/in/login")
+  }
+
   return (
     <div className="wrapper">
      {/* <img src='https://assets.nflxext.com/ffe/siteui/vlv3/893a42ad-6a39-43c2-bbc1-a951ec64ed6d/1d86e0ac-428c-4dfa-9810-5251dbf446f8/IN-en-20231002-popsignuptwoweeks-perspective_alpha_website_small.jpg' alt=""/> */}
@@ -12,7 +21,7 @@ const Navbar = () => {
               <select name="LanguageSelect" className='select' >
               <option className="option" lang="en" label="English" defaultValue="en-IN">English</option>
               <option className="option"  lang="hi" label="हिन्दी" defaultValue="hi-IN">हिन्दी</option></select>
-      <button className='btn-signin'>Sign In</button>
+      <button className='btn-signin' onClick={()=>{handleroute()}}>Sign In</button>
       </div>
          </div>
   )
