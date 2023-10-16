@@ -28,7 +28,7 @@ const FrequentlyAskedQuestion = () => {
                     <button onClick={() => {handleDrop(items.id) }}>
                       <span>{items.key}</span>
                       <svg style={{ transform: show && id === items.id ? 'rotate(45deg)' : '' }} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" alt="">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor"></path>
+                        <path fillRule="evenodd" clipRule="evenodd" d="M11 11V2H13V11H22V13H13V22H11V13H2V11H11Z" fill="currentColor"></path>
                       </svg>
                     </button>
                   </h3>

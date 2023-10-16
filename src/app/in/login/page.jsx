@@ -43,17 +43,19 @@ useEffect(()=>{
   useEffect(() => {
     const handleResize = () => {
       const layerElement = document.querySelector('.layer');
-      if (window.innerWidth <= 767) {
-        setLogoWidth(100);
-        if (layerElement) {
-          layerElement.style.backgroundColor = 'black';
+      if (layerElement) {
+        if (window.innerWidth <= 767) {
+          setLogoWidth(100);
+          if (layerElement) {
+            layerElement.style.backgroundColor = 'black';
+          }
+          // Set width to 80 for mobile devices
+        } else {
+          layerElement.style.backgroundColor = '#0000009e';
+          setLogoWidth(175); // Reset to default width for larger screens
         }
-        // Set width to 80 for mobile devices
-      } else {
-        layerElement.style.backgroundColor = '#0000009e';
-        setLogoWidth(175); // Reset to default width for larger screens
-      }
-    };
+      };
+    }
     handleResize(); // Call the function on initial render
     window.addEventListener('resize', handleResize);
     return () => {
@@ -73,7 +75,7 @@ useEffect(()=>{
       return
     }
 sessionStorage.setItem("user",email)
-    router.push("../streaming")
+    router.push("../in/watching")
   }
 
   console.log("ap", pass, email)

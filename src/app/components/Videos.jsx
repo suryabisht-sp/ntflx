@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Videos = () => {
+  const vidRef=useRef()
    const data = [
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
@@ -21,11 +22,23 @@ const Videos = () => {
   const randomIndex = Math.floor(Math.random() * data.length);
   const randomVideoUrl = data[randomIndex];
 
+  const handlePlay = () => {
+    // const data= vidRef.current.play()
+      vidRef.current.play() 
+  }
+
+
   return (
-    <div style={{zIndex:"2"}}>
-      <video controls loop autoPlay style={{ width: "100%", height: "auto", paddingLeft:"5%" }}>
+    <div style={{ zIndex: "2" }}>
+      <div>
+      <video ref={vidRef} style={{ width: "100%", height: "auto", }}>
         <source src={randomVideoUrl} type="video/mp4" />
       </video>
+</div>
+        <button className='btn-play' onClick={() => { handlePlay() }}>Play</button>
+      <div className='add-new'>
+         <span>+</span>
+      </div>
     </div>
   );
 }
