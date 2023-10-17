@@ -31,8 +31,6 @@ useEffect(()=>{
   rty()
 },[])
 
-  console.log("check", title, avail)
-  
   useEffect(() => {
     const handleResize = () => {
       const layerElement = document.querySelector('.layer');

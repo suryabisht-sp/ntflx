@@ -47,7 +47,8 @@ const WhoIsWatching = () => {
     { "url": "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg", "name": "Sabastain" },
 ]
 
-  const handleRoute = () => {
+  const handleRoute = (item) => {
+    sessionStorage.setItem("avatar",item)
      router.push("../streaming")
   }
   
@@ -61,7 +62,7 @@ const WhoIsWatching = () => {
         <div className='image-box'>
           {imgUrl && imgUrl.map((item, index) => {
             return (<div key={index} className='hover-img-box'>
-              <img alt="" onClick={()=>{handleRoute()}} className="img" src={item.url} />
+              <img alt="" onClick={()=>{handleRoute(item.url)}} className="img" src={item.url} />
               <span>{item.name}</span>
             </div>)
           })}

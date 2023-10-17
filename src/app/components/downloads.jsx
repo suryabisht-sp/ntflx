@@ -4,11 +4,8 @@ const Downloads = () => {
   return (
     <div className='download-container'>
       <div className='download-sub'>
-        <div>
-          <img style={{
-            width: "479px",
-            height: "380px"
-          }} alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" />
+        <div className='common-video'> 
+          <img alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" />
           <div className='card-download'>
             <div className='image-div'>
             <img alt="" style={{height:"80px"}} src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png" />

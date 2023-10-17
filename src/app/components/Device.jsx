@@ -12,7 +12,7 @@ const Device = () => {
             Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.
           </h3>
         </div>
-        <div className=''>
+        <div className='common-video'>
           <img alt="" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png" />
           <video className='video-netflx' muted autoPlay playsInline loop>
             <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v" type="video/mp4" /></video>

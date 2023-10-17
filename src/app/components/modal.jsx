@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import Videos from './Videos'
 
-const Modal = ({items, modalOff }) => {
+const Modal = ({items,modalOff }) => {
 //   const items={
 //     "title": "Django Unchained",
 //     "boxart": "http://cdn0.nflximg.net/images/3530/11573530.jpg",
