@@ -771,17 +771,17 @@ align-items: center;
         height: 20px;
       }
     .btn-clse {
-      border: none;
-      color: #fff;
-      background: #95909024;
-      padding: 2%;
-      border-radius: 8px;
-      cursor: pointer;
-      margin: 0px 10px 0px 10px;
-      width: 50px;
-      height: 30px;
+    border: none;
+    color: #fff;
+    background: transparent;
+    padding: 2% 1% 0% 1%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0px 10px 0px 10px;
+    width: 25px;
+    height: 25px;
       &:hover {
-        background: red;
+        background: #fff
       }
     
     }
@@ -1723,17 +1723,44 @@ background: #000;
 }
 .text2{
   font-size: 16px;
+  z-index: 1;
+    top: 48%;
 }
 .text3{
   font-size: 16px;
+      top: 70%;
+    z-index: 1;
 }
 .text4{
   font-size: 16px;
+   z-index: 1;
+    top: 95%;
 }
-.home-container{
-top: 22%;
+.text5{
+      top: 118%;
+    z-index: 1; 
+}
 
+.home-container1{
+ .home-container{
+   top: 22% !important;
+ }
+  .card{
+   height: 250px !important;
+  }
+
+.home-container2 {
+    top: 46% !important;
 }
+.home-container3 {
+    top: 69% !important;
+}
+.home-container4 {
+    top: 93% !important;
+}
+.home-container5 {
+    top: 118% !important;
+}}
 .card{
   img{
     width: 150px;
@@ -1742,3 +1769,64 @@ top: 22%;
 }
   
 }
+
+
+.play-btn{
+  position: absolute;
+      display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+  .btn-play {
+
+    top: 80%;
+    left: 10%;
+    width: 4%;
+    background:  #00000041 !important;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    height: 4%;
+    color: #fff;
+    font-weight: 500;
+       &:hover{
+background: red !important;
+      cursor: pointer;
+    }
+  }
+  .btn-full{
+    @extend .btn-play;
+    left: 80% !important;
+    background: #0000001a !important;
+    &:hover{
+background: red;
+      cursor: pointer;
+    }
+  }
+  .btn-newclose {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(0 0 0 / 24%);
+    border: 1px solid #fff;
+    font-size: 18px;
+    font-weight: 200;
+    transition: 0.5s;
+    color: #fff;
+    position: absolute;
+    z-index: 3;
+    right: 4%;
+    top: 2%;
+    &:hover {
+      cursor: pointer;
+      background: red;
+    }
+  }
+
+  @media (max-width:720px) {
+     .btn-play {
+      width: 8% !important;
+      height: 12%;
+     }
+  }

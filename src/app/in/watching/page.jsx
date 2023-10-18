@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 const WhoIsWatching = () => {
   const [logoWidth, setLogoWidth] = useState(175);
   const [showdata, setShowData] = useState(false)
+  const [user,setUser]=useState()
   const router=useRouter()
   useEffect(()=>{
     const data = sessionStorage.getItem("user")
@@ -36,6 +37,10 @@ const WhoIsWatching = () => {
   useEffect(() => {   
     handleResize(); // Call the function on initial render
     window.addEventListener('resize', handleResize);
+    const userCheck = sessionStorage.getItem("user");
+    const nameExtract= userCheck.split("@").splice(0,1)
+
+    setUser(nameExtract)
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -48,9 +53,14 @@ const WhoIsWatching = () => {
 ]
 
   const handleRoute = (item) => {
-    sessionStorage.setItem("avatar",item)
+    sessionStorage.setItem("avatar", item)
+    sessionStorage.setItem("userName", user)
      router.push("../streaming")
   }
+
+
+
+  console.log("user", user)
   
   return (
     <div className='watch-container'> 
@@ -60,6 +70,10 @@ const WhoIsWatching = () => {
       {<div className={`watch-box ${showdata ? 'visible' : 'hidden'}`}>
         <span className='who-is'>Who's watching ?</span>
         <div className='image-box'>
+          <div className='hover-img-box'>
+              <img alt="" onClick={()=>{handleRoute("https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png")}} className="img" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" />
+              <span>{user}</span>
+            </div>
           {imgUrl && imgUrl.map((item, index) => {
             return (<div key={index} className='hover-img-box'>
               <img alt="" onClick={()=>{handleRoute(item.url)}} className="img" src={item.url} />

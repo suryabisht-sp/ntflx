@@ -73,7 +73,7 @@ useEffect(()=>{
       alert("Email or password missing")
       return
     }
-sessionStorage.setItem("user",email)
+   sessionStorage.setItem("user",email)
     router.push("../in/watching")
   }
 
